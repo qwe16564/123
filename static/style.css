@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --background-color: #f0f2f5;
+    --container-bg: #ffffff;
+    --primary-text: #050505;
+    --secondary-text: #65676b;
+    --accent-color: #0084ff;
+    --accent-hover: #006edc;
+    --user-message-bg: #0084ff;
+    --bot-message-bg: #e4e6eb;
+    --border-color: #ced0d4;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+    height: 90vh;
+    max-height: 800px;
+    background-color: var(--container-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    padding: 16px;
+    background-color: var(--accent-color);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 70%;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: var(--user-message-bg);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+    background-color: var(--bot-message-bg);
+    color: var(--primary-text);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-form {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--container-bg);
+}
+
+#message_input {
+    flex-grow: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#message_input:focus {
+    border-color: var(--accent-color);
+}
+
+#send_button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+#send_button:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Simple send icon */
+#send_button::before {
+    content: '➤';
+    transform: rotate(-45deg);
+    margin-bottom: 2px;
+}
